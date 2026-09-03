@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--ajustar para invocar los archivos default.css e index.js-->
+    <link rel="stylesheet" href="">
+    <script type="module" src="" ></script>
+    <title>Simulador Financiero - UAO</title>
+</head>
+<body>
+    <header>
+        <img src="Images/Logo-50-años.png" alt="Logo 50 años">        
+        <h1>Ajustar</h1>
+    </header>
+    <main>
+        <section>
+            <p>Ajustar</p>
+            <table>
+                <caption>Simulador de Cuotas</caption>  
+                <tr>
+                    <td>Nombre</td>
+                    <td>
+                        <input type="text" value="Lina Rios" id="elNombre">
+                    </td>
+                </tr>  
+                <tr>
+                    <td>Prestamo $</td>
+                    <td>
+                        <input type="number" value="6000000" id="elPrestamo">
+                    </td>
+                </tr> 
+            </table><br>
+            <textarea id="laRespuesta" readonly></textarea><br>
+            <select id="laOpcion">
+                <option value="Calcular" selected>Calcular Cuota</option><!-- Opción por defecto -->
+                <option value="ListarTodos">Listar todos</option> 
+                <option value="ListarGanan">Listar ganan mas</option> 
+            </select> 
+            <button id="procesar">Ejecutar funcionalidad</button>   
+        </section>
+    </main>
+    <footer>
+        <hr>
+        <p>Ajustar</p>
+    </footer>
+</body>
+</html>
