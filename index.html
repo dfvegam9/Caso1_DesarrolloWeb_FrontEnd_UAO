@@ -1,64 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles/default.css" />
+        <script type="module" src="scripts/index.js"></script>
+        <title>Simulador Financiero - UAO</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--ajustar para invocar los archivos default.css e index.js-->
-    <link rel="stylesheet" href="styles/default.css">
-    <script type="module" src="scripts/index.js"></script>
-    <title>Simulador Financiero - UAO</title>
-</head>
-
-<body>
-    <header>
-        <img src="Images/logouao.png" alt="Logo 50 años">        
-        <h1>Ajustar</h1>
-    </header>
-    <main>
-        <section>
-            <p>Ajustar</p>
-            <table>
-                <caption>Simulador de Cuotas</caption>
-                <tr>
-                    <td>Nombre</td>
-                    <td>
-                        <input type="text" value="Lina Rios" id="elNombre">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Préstamo $</td>
-                    <td>
-                        <input type="number" value="1000000" id="elPrestamo">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Interés (%)</td>
-                    <td>
-                        <input type="number" value="15.5" id="elInteres">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Meses</td>
-                    <td>
-                        <input type="number" value="12" id="losMeses">
-                    </td>
-                </tr>
-            </table><br>
-            <textarea id="laRespuesta" readonly></textarea><br>
-            <select id="laOpcion">
-                <option value="Calcular" selected>Calcular Cuota</option><!-- Opción por defecto -->
-                <option value="ListarTodos">Listar todos</option>
-                <option value="ListarGanan">Listar ganan mas</option>
-            </select>
-            <button id="procesar">Ejecutar funcionalidad</button>
-        </section>
-    </main>
-    <footer>
-        <hr>
-        <p>Ajustar</p>
-    </footer>
-</body>
-
+    <body>
+        <header>
+            <img src="Images/logouao.png" alt="Logo 50 años" />
+            <h1>Caso 1 - Cómputo de cuotas mensuales</h1>
+        </header>
+        <main>
+            <section>
+                <p class="introduccion">
+                    Este aplicativo permite el cómputo de la cuota mensual con
+                    los datos suministrados y la generación de un par de
+                    reportes.
+                </p>
+                <table>
+                    <caption>
+                        Simulador de Cuotas
+                    </caption>
+                    <tbody>
+                        <tr>
+                            <td><label for="elNombre">Nombre</label></td>
+                            <td>
+                                <input
+                                    type="text"
+                                    value="Lina Rios"
+                                    id="elNombre"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="elPrestamo">Préstamo $</label></td>
+                            <td>
+                                <input
+                                    type="number"
+                                    value="1000000"
+                                    id="elPrestamo"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="elInteres">Interés (%)</label></td>
+                            <td>
+                                <input
+                                    type="number"
+                                    value="15.5"
+                                    id="elInteres"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="losMeses">Meses</label></td>
+                            <td>
+                                <input type="number" value="12" id="losMeses" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <textarea
+                    id="laRespuesta"
+                    aria-label="Respuesta del simulador"
+                    readonly
+                    placeholder="Aquí aparecerán los resultados..."
+                ></textarea>
+                <div class="acciones">
+                    <select id="laOpcion" aria-label="Funcionalidad a ejecutar">
+                        <option value="Calcular" selected>
+                            Calcular cuota
+                        </option>
+                        <option value="ListarTodos">Listar todos</option>
+                        <option value="ListarGanan">
+                            Listar préstamos mayores a $1.000.000
+                        </option>
+                    </select>
+                    <button id="procesar" type="button">
+                        Ejecutar funcionalidad
+                    </button>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <hr />
+            <p>
+                Creado por Diego Vega, Andrea Fernandez y Giannella Quintero
+                para el curso de Estructuras de Datos y Algoritmos 1 de la
+                Universidad Autónoma de Occidente.
+            </p>
+        </footer>
+    </body>
 </html>
