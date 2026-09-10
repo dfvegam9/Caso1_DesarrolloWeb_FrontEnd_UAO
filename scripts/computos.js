@@ -11,14 +11,31 @@ function calcularCuotaMensual(prestamo, interes, meses) {
   return Math.round(res * 100) / 100;
 }
 
-function reporteTotal({ nombre, prestamo, interes, meses, cuota }) {
-  let res = `${nombre} -- $ ${prestamo} - $ ${cuota} - ${meses} meses - ${interes}%\n`;
-  return res;
+function reporteTotal(info) {
+  let mensaje = '';
+  if (info.length === 0) {
+    mensaje = 'No hay préstamos procesados.';
+  } else {
+    mensaje = 'Listado de préstamos procesados son:\n\n';
+  }
+  info.forEach((dato) => {
+    mensaje += `${dato.nombre} -- $ ${dato.prestamo} - $ ${dato.cuota.toFixed(2)} - ${dato.meses} meses - ${dato.interes}%\n`;
+  });
+  return mensaje;
 }
 
-function reporteMasGanan({ nombre, prestamo, cuota }) {
-  let res = `${nombre} -- $ ${prestamo} - $ ${cuota}\n`;
-  return res;
+function reporteMasGanan(info) {
+  let mensaje = '';
+  const aux = info.filter((dato) => dato.prestamo > 1000000);
+  if (aux.length === 0) {
+    mensaje = 'No hay préstamos mayores a $1.000.000.';
+  } else {
+    mensaje = 'Listado de préstamos mayores a $1.000.000:\n\n';
+  }
+  aux.forEach((dato) => {
+    mensaje += `${dato.nombre} -- $ ${dato.prestamo} - $ ${dato.cuota.toFixed(2)}\n`;
+  });
+  return mensaje;
 }
 
 // listar cada una de las funciones a exportar

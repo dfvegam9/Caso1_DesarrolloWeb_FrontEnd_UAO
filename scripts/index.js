@@ -75,14 +75,8 @@ function procesarEntrada() {
 function mostrarReporte1() {
     //Limpiar el area de texto
     txtA_Respuesta.value = "";
-    // agregar un nuevo elemento con el texto "Reporte 1"
-    txtA_Respuesta.value += "Listado préstamos procesados son:\n\n";
-    // itera sobre cada elemento del arreglo infoCuotas
-    infoCuotas.forEach((info) => {
-        // y despliega el resultado de la función reporteTotal
-        txtA_Respuesta.value += reporteTotal(info);
-    });
-
+    // y despliega el resultado de la función reporteTotal
+    txtA_Respuesta.value += reporteTotal(infoCuotas);
 }
 
 /*
@@ -91,13 +85,8 @@ function mostrarReporte1() {
 function mostrarReporte2() {
     //Limpiar el area de texto
     txtA_Respuesta.value = "";
-    // agregar un nuevo elemento con el texto "Reporte 2"
-    txtA_Respuesta.value += "Listado préstamos por más de $ 1'000.000:\n\n";
-    // itera sobre cada elemento del arreglo infoCuotas
-    infoCuotas.forEach((info) => {
-        // y despliega el resultado de la función reporteMasGanan
-        txtA_Respuesta.value += reporteMasGanan(info);
-    });
+    // y despliega el resultado de la función reporteMasGanan
+    txtA_Respuesta.value += reporteMasGanan(infoCuotas);
 }
 
 
